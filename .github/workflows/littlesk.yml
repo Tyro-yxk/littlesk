@@ -1,0 +1,21 @@
+jobs:
+  littlesk_auto:
+    runs-on: ubuntu-latest
+    name: littlesk_auto_sign_in
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: littlesk
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10.x"
+          architecture: "x64"
+      -  run: python ./main.py
+    env:
+      USER_INFO: ${{secrets.USER_INFO}}
+name: littlesk_auto_sign_in
+on:
+  schedule:
+    - cron: "30 6 * * *"
