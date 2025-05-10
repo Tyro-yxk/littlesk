@@ -12,7 +12,7 @@ jobs:
         with:
           python-version: "3.10.x"
           architecture: "x64"
-      -  run: pip install -r ./requirements.txt && python ./littlesk.py
+      - run: pip install -r ./requirements.txt && python ./littlesk.py
     env:
       USER_INFO: ${{secrets.USER_INFO}}
 name: littlesk_auto_sign_in
