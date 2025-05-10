@@ -17,5 +17,6 @@ jobs:
       USER_INFO: ${{secrets.USER_INFO}}
 name: littlesk_auto_sign_in
 on:
+  workflow_dispatch:
   schedule:
     - cron: "30 6 * * *"
